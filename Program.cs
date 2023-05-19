@@ -4,12 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
+        bool continueProgram = true;
+
+        while (continueProgram){
+            
         Console.Write("Please input Pascal's triangle row number: ");
         int numRows = int.Parse(Console.ReadLine());
 
+        
+        
+        
         if (numRows < 0)
         {
             Console.WriteLine("Invalid Pascal's triangle row number.");
+            continue;
         }
         else
         {
@@ -21,6 +29,9 @@ class Program
                 }
                 Console.WriteLine();
             }
+
+            continueProgram = false;
+            
         }
     }
 
@@ -35,4 +46,5 @@ class Program
             return CalculatePascalValue(row - 1, column - 1) + CalculatePascalValue(row - 1, column);
         }
     }
+}
 }
